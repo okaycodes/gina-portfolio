@@ -5,7 +5,6 @@ import { FaBars } from "react-icons/fa";
 import { CgShapeRhombus } from "react-icons/cg";
 import { IoCloseOutline } from "react-icons/io5";
 
-import ThemeIcon from "./themeIcon";
 import { navArray } from "./header.constants";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 
@@ -72,10 +71,7 @@ export default function Header({ switchTheme, themeMode }) {
             })}
           </NavList>
         </Nav>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <ThemeIcon switchTheme={switchTheme} themeMode={themeMode} />
-          <Hamburger onClick={() => setShowMenu(true)} />
-        </div>
+        <Hamburger onClick={() => setShowMenu(true)} />
       </Inner>
     </Container>
   );

@@ -1,8 +1,5 @@
-export const green = {
-  100: "#9CEAEF",
-  200: "#68D8D6",
-  300: "#3DCCC7",
-  400: "#07BEB8",
+export const purple = {
+  400: "#85126C",
 };
 
 export const neutral = {

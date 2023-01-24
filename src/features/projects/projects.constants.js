@@ -1,7 +1,7 @@
 export const projects = [
   {
-    type: ["frontend"],
     title: "momentum dashboard clone",
+    bgColor: "lightPink",
     links: {
       github: "githumb.com/okaycodes",
       demo: "github.com/okaycodes",
@@ -21,10 +21,10 @@ export const projects = [
     },
   },
   {
-    type: ["frontend", "backend"],
     title: "hackflix",
+    bgColor: "lightYellow",
     links: {
-      github: "githumb.com/okaycodes",
+      github: "github.com/okaycodes",
       demo: "github.com/okaycodes",
     },
     image: {

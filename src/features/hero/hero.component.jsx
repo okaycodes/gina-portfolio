@@ -4,19 +4,19 @@ import { SectionBaseStyles } from "../common/styles";
 export default function HeroContainer() {
   return (
     <Container id="about">
-      <Avatar></Avatar>
       <Intro>
-        <Text>Hi there, My name is </Text>
-        <Title>Favour O. Okenana.</Title>
-        <Text> I am a</Text>
-        <TextAccent> Software Developer. </TextAccent>
+        <span>Hi there, My name is </span>
+        <Title>Georgina Riebelle</Title>
       </Intro>
       <Intro>
         <Text>
-          I am a fullstack software developer specializing in frontend software
-          development targeting both web and mobile platfroms. I take great
-          pleasure in learning new technologies and architecting scalable, clean
-          and performant applications.
+          I am a user experience and user interactive designer with a skill set
+          covering different areas and technologies including Figma, AdobeXd,
+          Adobe Photoshop, Motion Design etc.{" "}
+        </Text>
+        <Text>
+          I strive to solve design problems by bringing your design ideas to
+          life with my unique expertise and experience.
         </Text>
       </Intro>
     </Container>
@@ -25,39 +25,20 @@ export default function HeroContainer() {
 
 export const Container = styled(SectionBaseStyles)`
   align-items: center;
-  min-height: 500px;
-  margin-bottom: 100px;
+  padding: 220px 0;
 `;
 
 export const Title = styled.h1`
   font-size: ${(props) => props.theme.fontSize.xl3};
   line-height: 1.6;
   display: inline;
-`;
-
-export const Text = styled.p`
-  display: inline;
-`;
-
-export const TextAccent = styled.span`
-  display: inline;
-  font-weight: bold;
   color: ${(props) => props.theme.colors.primary};
 `;
 
-export const Avatar = styled.img`
-  width: 200px;
-  height: 200px;
-  margin: 190px 0 100px;
-  background-color: ${(props) => props.theme.colors.text};
-  border-radius: 50%;
-`;
-// additional 90px is added to the avatar to account for the
-// default height of the fixed header
+export const Text = styled.p``;
 
 export const Intro = styled.div`
-  font-size: 1.25rem;
+  font-size: ${(props) => props.theme.fontSize.xl1};
   width: 85%;
   max-width: 750px;
-  text-align: center;
 `;

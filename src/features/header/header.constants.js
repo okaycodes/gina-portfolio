@@ -1,7 +1,6 @@
 export const navArray = [
-  { name: "about", link: "../#about" },
-  { name: "project", link: "../#projects" },
-  { name: "skills", link: "../#skills" },
+  { name: "work", link: "../#work" },
+  { name: "about", link: "../about" },
   { name: "contact", link: "../#contact" },
   { name: "resume", link: "../resume" },
 ];

@@ -40,13 +40,7 @@ export default function Header({ switchTheme, themeMode }) {
   return (
     <Container scrollPastHeader={scrollPastHeader}>
       <Inner>
-        <Logo to="../">
-          <img
-            style={{ width: "100%" }}
-            src="./images/icons/logo.svg"
-            alt="logo"
-          />
-        </Logo>
+        <Logo to="../">Gina Riebelle</Logo>
 
         <Nav showMenu={showMenu} ref={navRef}>
           <NavList>
@@ -64,7 +58,7 @@ export default function Header({ switchTheme, themeMode }) {
                     isActive={activeItem === navItem.name}
                     onClick={() => handleClick(navItem.name)}
                   >
-                    {navItem.name.toUpperCase()}
+                    {navItem.name}
                   </NavListLink>
                 </NavListItem>
               );
@@ -78,7 +72,7 @@ export default function Header({ switchTheme, themeMode }) {
 }
 
 const Container = styled.header`
-  padding: 1.2em;
+  padding: 1.7em;
   position: fixed;
   z-index: 2;
   width: 100%;
@@ -96,7 +90,10 @@ const Inner = styled.div`
   max-width: 1100px;
 `;
 const Logo = styled(Link)`
-  width: 80px;
+  all: unset;
+  cursor: pointer;
+  font-size: ${(props) => props.theme.fontSize.xl2};
+  color: ${(props) => props.theme.colors.primary};
 `;
 
 const Hamburger = styled(FaBars)`
@@ -170,7 +167,7 @@ const NavListItem = styled.li`
   padding: 0 2em;
   margin-bottom: 1em;
   color: ${(props) => props.isActive && props.theme.colors.primary};
-
+  text-transform: capitalize;
   &:hover,
   &:focus {
     color: ${(props) => props.theme.colors.primary};
@@ -194,13 +191,13 @@ const NavListIcon = styled(CgShapeRhombus)`
 const NavListLink = styled(Link)`
   all: unset;
   cursor: pointer;
-  font-size: ${(props) => props.theme.fontSize.xl};
+
   border-bottom: ${(props) =>
-    props.isActive && `solid 2px ${props.theme.colors.primary} `};
+    props.isActive && `solid 2px ${props.theme.colors.primary}`};
 
   @media (min-width: 800px) {
-    padding: 2em 0;
-    font-size: 13px;
+    padding: 1.5em 0;
+    font-size: ${(props) => props.theme.fontSize.xl};
     font-weight: 400;
   }
 `;

@@ -1,4 +1,4 @@
-import { green, neutral } from "./colors";
+import { purple, neutral } from "./colors";
 import { fontSize, fontFamily } from "./typography";
 
 const theme = {
@@ -11,8 +11,8 @@ const darkTheme = {
   colors: {
     bg: neutral[300],
     text: neutral[100],
-    linkText: green[200],
-    primary: green[200],
+    linkText: purple[400],
+    primary: purple[400],
     disabled: neutral[200],
   },
 };
@@ -22,8 +22,8 @@ const lightTheme = {
   colors: {
     bg: neutral[100],
     text: neutral[300],
-    linkText: green[300],
-    primary: green[400],
+    linkText: purple[400],
+    primary: purple[400],
     disabled: neutral[200],
   },
 };

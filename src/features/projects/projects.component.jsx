@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 import Title from "../ui/title";
@@ -19,7 +19,7 @@ export default function ProjectContainer() {
 
   return (
     <Container id="projects">
-      <Title handleFilter={handleFilter}>PROJECTS</Title>
+      <Title handleFilter={handleFilter}>Works</Title>
       <List>
         {selectedProjects.map((project) => (
           <ProjectItem project={project} />

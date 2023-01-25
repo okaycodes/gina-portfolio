@@ -1,10 +1,12 @@
+import { ThemeProvider } from "styled-components";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+
 import HomePage from "./pages/home";
+import Resume from "./pages/resume";
+import About from "./pages/about";
 import themeData from "./constants/themes";
 import useThemeMode from "./hooks/useTheme";
 import { GlobalStyles } from "./global-styles";
-import { ThemeProvider } from "styled-components";
-import Resume from "./pages/resume";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
 import PageLayout from "./features/ui/layout";
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
             }
           >
             <Route index element={<HomePage />} />
+            <Route path="about" element={<About />} />
             <Route path="resume" element={<Resume />} />
             <Route path="*" element={<HomePage />} />
           </Route>

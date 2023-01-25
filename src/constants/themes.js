@@ -1,9 +1,11 @@
 import { purple, neutral } from "./colors";
+import { breakpoints } from "./breakpoints";
 import { fontSize, fontFamily } from "./typography";
 
 const theme = {
   fontSize,
   fontFamily,
+  bp: breakpoints,
 };
 
 const darkTheme = {

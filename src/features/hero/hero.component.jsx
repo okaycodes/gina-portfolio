@@ -1,44 +1,71 @@
 import styled from "styled-components";
-import { SectionBaseStyles } from "../common/styles";
 
 export default function HeroContainer() {
   return (
     <Container id="about">
       <Intro>
-        <span>Hi there, My name is </span>
+        <Text> Hi there, my name is </Text>
         <Title>Georgina Riebelle</Title>
       </Intro>
-      <Intro>
-        <Text>
-          I am a user experience and user interactive designer with a skill set
-          covering different areas and technologies including Figma, AdobeXd,
-          Adobe Photoshop, Motion Design etc.{" "}
-        </Text>
-        <Text>
-          I strive to solve design problems by bringing your design ideas to
-          life with my unique expertise and experience.
-        </Text>
-      </Intro>
+
+      <Text>
+        I am a user experience and user interactive designer with a skill set
+        covering different areas and technologies including Figma, AdobeXd,
+        Adobe Photoshop, Motion Design etc.{" "}
+      </Text>
+      <Text>
+        I strive to solve design problems by bringing your design ideas to life
+        with my unique expertise and experience.
+      </Text>
     </Container>
   );
 }
 
-export const Container = styled(SectionBaseStyles)`
+export const Container = styled.main`
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  margin: 0 auto;
+  justify-content: center;
   padding: 220px 0;
+  width: 85%;
+  max-width: 750px;
 `;
 
 export const Title = styled.h1`
-  font-size: ${(props) => props.theme.fontSize.xl3};
-  line-height: 1.6;
-  display: inline;
+  margin: 0;
+  padding: 0;
   color: ${(props) => props.theme.colors.primary};
+  font-size: ${(props) => props.theme.fontSize.xl2};
+  display: inline;
+
+  @media (min-width: ${(props) => props.theme.bp.sm}) {
+    font-size: ${(props) => props.theme.fontSize.xl3};
+    line-height: 1.6;
+  }
 `;
 
-export const Text = styled.p``;
+export const Text = styled.p`
+  font-size: ${(props) => props.theme.fontSize.xl};
+  @media (min-width: ${(props) => props.theme.bp.sm}) {
+    font-size: ${(props) => props.theme.fontSize.xl1};
+  }
+`;
 
-export const Intro = styled.div`
-  font-size: ${(props) => props.theme.fontSize.xl1};
-  width: 85%;
-  max-width: 750px;
+const Intro = styled.section`
+  align-self: stretch;
+  text-align: left;
+
+  & ${Text} {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+
+  @media (min-width: ${(props) => props.theme.bp.sm}) {
+    & ${Text} {
+      display: inline;
+      font-size: ${(props) => props.theme.fontSize.xl1};
+    }
+  }
 `;

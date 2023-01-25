@@ -11,6 +11,8 @@ import { useWindowResize } from "../../hooks/useWindowResize";
 
 export default function ResumeItem({ pdf, pageNumber }) {
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+  const { width } = useWindowResize();
+  const pdfWidth = width * 0.9 <= 900 ? width * 0.9 : 900;
 
   const handleDownload = () => {
     fetch("./pdf/resume-fullstack-full.pdf").then((response) => {
@@ -23,8 +25,6 @@ export default function ResumeItem({ pdf, pageNumber }) {
       });
     });
   };
-
-  const { width } = useWindowResize();
 
   const handlePrev = () => {
     const element = document.getElementById("page-1");
@@ -77,11 +77,7 @@ export default function ResumeItem({ pdf, pageNumber }) {
         </Actions>
 
         <Document file={pdf} externalLinkTarget="_blank">
-          <Page
-            width={width * 0.9}
-            pageNumber={1}
-            renderAnnotationLayer={true}
-          />
+          <Page width={pdfWidth} pageNumber={1} renderAnnotationLayer={true} />
         </Document>
       </Container>
     </>
@@ -97,7 +93,7 @@ const Container = styled.section`
   padding-top: 100px;
   padding-bottom: 0;
   margin-bottom: 0;
-  max-width: 800px;
+  max-width: 900px;
 `;
 
 const Actions = styled.div`
@@ -105,8 +101,8 @@ const Actions = styled.div`
   display: flex;
   justify-content: space-between;
   color: ${(props) => props.theme.colors.text};
-  width: 90%;
   margin: 0 auto;
+  width: 100%;
 `;
 
 const PageActions = styled.div`

@@ -6,6 +6,8 @@ export default function Button({
   onClick,
   type = "button",
   variant = "PRIMARY",
+  iconType,
+  animateIconSize,
   animateIconDown,
   animateIconLeft,
   animateIconRight,
@@ -16,6 +18,8 @@ export default function Button({
       return (
         <IconButton
           onClick={onClick}
+          iconType={iconType}
+          animateIconSize={animateIconSize}
           animateIconDown={animateIconDown}
           animateIconLeft={animateIconLeft}
           animateIconRight={animateIconRight}
@@ -84,12 +88,25 @@ const IconButton = styled(Base)`
   padding: 0em;
   background: none;
   border: none;
-  font-size: ${(props) => props.theme.fontSize.xl2};
+  ${(props) =>
+    props.iconType === "image" &&
+    `width: 68px;
+     height: 60px;
+     border-radius: 4px;
+     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);`}
+
   color: ${(props) => props.theme.colors.text};
   transition: transform 200ms;
+  font-size: ${(props) => props.theme.fontSize.xl2};
+
+  & img {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
 
   &:hover {
-    color: ${(props) => props.theme.colors.primary};
+    transform: ${(props) => props.animateIconSize && "scale(110%)"};
     transform: ${(props) => props.animateIconLeft && "translateX(-10%)"};
     transform: ${(props) => props.animateIconRight && "translateX(10%)"};
     transform: ${(props) => props.animateIconDown && "translateY(10%)"};
@@ -100,5 +117,13 @@ const IconButton = styled(Base)`
     color: ${(props) => props.theme.colors.disabled};
     transform: translateX(0);
     transform: translateY(0);
+  }
+
+  @media (min-width: ${(props) => props.theme.bp.sm}) {
+    ${(props) =>
+      props.iconType === "image" &&
+      `width: 88px;
+       height: 80px;
+       border-radius: 3px;`}
   }
 `;

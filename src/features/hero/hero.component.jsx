@@ -27,7 +27,7 @@ export const Container = styled.main`
   align-items: center;
   margin: 0 auto;
   justify-content: center;
-  padding: 220px 0;
+  padding-top: 160px;
   width: 85%;
   max-width: 750px;
 `;

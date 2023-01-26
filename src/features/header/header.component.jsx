@@ -78,7 +78,9 @@ const Container = styled.header`
   width: 100%;
   background-color: ${(props) => props.theme.colors.bg};
   box-shadow: ${(props) =>
-    props.scrollPastHeader && "0px 3px 5px 0px rgba(0, 0, 0, 0.2)"};
+    props.scrollPastHeader
+      ? "0px 3px 5px 0px rgba(0, 0, 0, 0.3)"
+      : "0px 3px 5px 0px rgba(0, 0, 0, 0.1)"};
 `;
 // the height of the container is being determined by the padding on its tallest grandchild, NavListItem
 

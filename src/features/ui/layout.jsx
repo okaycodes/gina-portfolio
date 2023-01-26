@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "../header/header.component";
+import Footer from "../footer/footer.component";
 
 export default function PageLayout({ switchTheme, themeMode }) {
   const { pathname, hash, key, state } = useLocation();
@@ -35,6 +36,7 @@ export default function PageLayout({ switchTheme, themeMode }) {
         //   scrollPastHeader={scrollPastHeader}
       />
       <Outlet />
+      <Footer />
     </main>
   );
 }

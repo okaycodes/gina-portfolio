@@ -30,19 +30,19 @@ export default function ProjectContainer() {
 }
 
 const Container = styled(SectionBaseStyles)`
-   width: 85%
-   max-width: 1100px;
-   margin-bottom: 150px;
+   width: 90%
+   max-width: ${(props) => props.theme.bp.xl};
+   margin-top: 100px;
 `;
 
 const List = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   justify-items: center;
   justify-content: center;
-  width: 90%;
+  width: 85%;
   padding: 0;
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
   grid-gap: 2em;
 `;

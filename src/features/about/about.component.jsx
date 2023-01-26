@@ -47,7 +47,6 @@ const Content = styled.main`
 `;
 
 const Goals = styled.ul`
-  margin-top: -180px;
   margin-left: 30px;
   width: 85%;
   max-width: ${(props) => props.theme.bp.xs};

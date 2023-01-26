@@ -5,6 +5,7 @@ import HomePage from "./pages/home";
 import Resume from "./pages/resume";
 import About from "./pages/about";
 import Contacts from "./pages/contacts";
+import Work from "./pages/work";
 import themeData from "./constants/themes";
 import useThemeMode from "./hooks/useTheme";
 import { GlobalStyles } from "./global-styles";
@@ -28,6 +29,7 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contacts />} />
             <Route path="resume" element={<Resume />} />
+            <Route path="works/:id" element={<Work />} />
             <Route path="*" element={<HomePage />} />
           </Route>
         </Routes>

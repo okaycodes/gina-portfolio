@@ -1,15 +1,21 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 export default function ProjectItem({ project }) {
-  const { title, image, description, links, bgColor } = project;
+  const navigate = useNavigate();
+  const { title, images, description, links, bgColor } = project;
   return (
-    <Container bgColor={bgColor}>
-      <Image src={image.src} alt={image.alt} />
+    <Container
+      bgColor={bgColor}
+      onClick={() => navigate(`works/${project.id}`)}
+    >
+      <ImagesContainer>
+        <Image src={images.display[0]} alt={title} />
+        <Image src={images.display[1]} alt={title} />
+      </ImagesContainer>
       <Description>
         <Title>{title}</Title>
-        <Intro>
-          {description.intro} <span>...more</span>
-        </Intro>
+        <Intro>{description}</Intro>
       </Description>
     </Container>
   );
@@ -23,9 +29,14 @@ const Container = styled.li`
   width: 100%;
   border-radius: 8px;
   overflow: hidden;
-  height: 380px;
-  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.65);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3);
   background-color: ${(props) => props.bgColor};
+  transition: transform 250ms linear;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(105%);
+  }
 `;
 
 const Description = styled.div`
@@ -33,7 +44,6 @@ const Description = styled.div`
   bottom: 0;
   width: 100%;
   font-size: 14px;
-  position: absolute;
   bottom: 0;
 `;
 
@@ -48,9 +58,15 @@ const Intro = styled.p`
   }
 `;
 
+const ImagesContainer = styled.div`
+  padding-top: 1em;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 80%;
+`;
+
 const Image = styled.img`
   display: block;
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
+  width: 45%;
 `;

@@ -93,7 +93,7 @@ const Container = styled.section`
   padding-top: 100px;
   padding-bottom: 0;
   margin-bottom: 0;
-  max-width: 900px;
+  max-width: 1000px;
 `;
 
 const Actions = styled.div`
@@ -102,7 +102,7 @@ const Actions = styled.div`
   justify-content: space-between;
   color: ${(props) => props.theme.colors.text};
   margin: 0 auto;
-  width: 100%;
+  width: 90%;
 `;
 
 const PageActions = styled.div`

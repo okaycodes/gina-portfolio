@@ -7,7 +7,7 @@ import { SectionBaseStyles } from "../common/styles";
 
 export default function WorksListContainer() {
   return (
-    <Container id="projects">
+    <Container id="works">
       <Title>Works</Title>
       <List>
         {works.map((work) => (

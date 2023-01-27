@@ -3,7 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Header from "../header/header.component";
 import Footer from "../footer/footer.component";
 
-export default function PageLayout({ switchTheme, themeMode }) {
+export default function PageLayout() {
   const { pathname, hash, key, state } = useLocation();
 
   //manage hash link scroll effect
@@ -30,11 +30,7 @@ export default function PageLayout({ switchTheme, themeMode }) {
   //
   return (
     <main>
-      <Header
-        switchTheme={switchTheme}
-        themeMode={themeMode}
-        //   scrollPastHeader={scrollPastHeader}
-      />
+      <Header />
       <Outlet />
       <Footer />
     </main>

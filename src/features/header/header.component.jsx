@@ -8,7 +8,7 @@ import { IoCloseOutline } from "react-icons/io5";
 import { navArray } from "./header.constants";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 
-export default function Header({ switchTheme, themeMode }) {
+export default function Header() {
   const { pathname, hash } = useLocation();
   const [showMenu, setShowMenu] = useState(false);
   const [scrollPastHeader, setScrollPastHeader] = useState(false);
@@ -193,6 +193,7 @@ const NavListIcon = styled(CgShapeRhombus)`
 const NavListLink = styled(Link)`
   all: unset;
   cursor: pointer;
+  font-size: ${(props) => props.theme.fontSize.xl2};
 
   border-bottom: ${(props) =>
     props.isActive && `solid 2px ${props.theme.colors.primary}`};

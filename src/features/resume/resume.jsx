@@ -9,18 +9,18 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import Button from "../ui/button";
 import { useWindowResize } from "../../hooks/useWindowResize";
 
-export default function ResumeItem({ pdf, pageNumber }) {
+export default function ResumeItem({ pageNumber }) {
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
   const { width } = useWindowResize();
   const pdfWidth = width * 0.9 <= 900 ? width * 0.9 : 900;
 
   const handleDownload = () => {
-    fetch("./pdf/resume-fullstack-full.pdf").then((response) => {
+    fetch("./pdf/georgina_riebelle.pdf").then((response) => {
       response.blob().then((blob) => {
         const fileURL = window.URL.createObjectURL(blob);
         let alink = document.createElement("a");
         alink.href = fileURL;
-        alink.download = "favour_okenana_resume.pdf";
+        alink.download = "georgina_riebelle_resume.pdf";
         alink.click();
       });
     });
@@ -76,8 +76,15 @@ export default function ResumeItem({ pdf, pageNumber }) {
           </Button>
         </Actions>
 
-        <Document file={pdf} externalLinkTarget="_blank">
-          <Page width={pdfWidth} pageNumber={1} renderAnnotationLayer={true} />
+        <Document
+          file={"./pdf/georgina_riebelle.pdf"}
+          externalLinkTarget="_blank"
+        >
+          <Page
+            width={pdfWidth}
+            pageNumber={pageNumber}
+            renderAnnotationLayer={true}
+          />
         </Document>
       </Container>
     </>

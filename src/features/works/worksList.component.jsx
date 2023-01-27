@@ -1,28 +1,17 @@
-import { useState } from "react";
 import styled from "styled-components";
 
 import Title from "../ui/title";
-import ProjectItem from "./projectItem";
-import { projects } from "./projects.constants";
+import WorkItem from "./workItem";
+import { works } from "./works.constants";
 import { SectionBaseStyles } from "../common/styles";
 
-export default function ProjectContainer() {
-  const [selectedProjects, setSelectedProjects] = useState(projects);
-
-  const handleFilter = (filter) => {
-    const selected =
-      filter === "all"
-        ? projects
-        : projects.filter((project) => project.type.includes(filter));
-    setSelectedProjects(selected);
-  };
-
+export default function WorksListContainer() {
   return (
     <Container id="projects">
-      <Title handleFilter={handleFilter}>Works</Title>
+      <Title>Works</Title>
       <List>
-        {selectedProjects.map((project) => (
-          <ProjectItem project={project} />
+        {works.map((work) => (
+          <WorkItem work={work} />
         ))}
       </List>
     </Container>

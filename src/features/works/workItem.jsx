@@ -1,14 +1,11 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
-export default function ProjectItem({ project }) {
+export default function WorkItem({ work }) {
   const navigate = useNavigate();
-  const { title, images, description, links, bgColor } = project;
+  const { title, images, description, bgColor } = work;
   return (
-    <Container
-      bgColor={bgColor}
-      onClick={() => navigate(`works/${project.id}`)}
-    >
+    <Container bgColor={bgColor} onClick={() => navigate(`works/${work.id}`)}>
       <ImagesContainer>
         <Image src={images.display[0]} alt={title} />
         <Image src={images.display[1]} alt={title} />

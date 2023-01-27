@@ -1,6 +1,6 @@
-export const projects = [
+export const works = [
   {
-    id: 1,
+    id: "1",
     title: "fendart order tracking",
     bgColor: "lightPink",
     link: "https://www.figma.com/proto/woWKHNHa0laYiNKMNMzRUb/fendart-track?page-id=58%3A2&node-id=58%3A293&viewport=110%2C22%2C0.29&scaling=scale-down&starting-point-node-id=58%3A293",
@@ -23,7 +23,7 @@ export const projects = [
     },
   },
   {
-    id: 2,
+    id: "2",
     title: "fae elephants",
     bgColor: "lightPurple",
     link: "https://www.figma.com/proto/AMnDxJvKRA3rPRjdn9BWl0/Untitled?page-id=41%3A1094&node-id=41%3A1095&viewport=107%2C392%2C0.25&scaling=scale-down&starting-point-node-id=41%3A1095",
@@ -46,7 +46,7 @@ export const projects = [
     },
   },
   {
-    id: 3,
+    id: "3",
     title: "ruel flowers",
     bgColor: "lightGreen",
     link: "github.com/okaycodes",
@@ -69,7 +69,7 @@ export const projects = [
     },
   },
   {
-    id: 4,
+    id: "4",
     title: "fendart order tracking",
     bgColor: "lightBlue",
     link: "github.com/okaycodes",

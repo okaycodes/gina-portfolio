@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { Link as NavLink } from "react-router-dom";
-import { projects } from "./projects.constants";
+import { works } from "./works.constants";
 
 export default function WorkContainer({ id }) {
-  const work = projects.filter((project) => project.id == id)[0];
+  const work = works.filter((project) => project.id === id)[0];
 
   return (
     <Container>

@@ -9,7 +9,10 @@ export default function WorkContainer({ id }) {
     <Container>
       <Title>{work.title}</Title>
       <LinkContainer>
-        View full project on <Link to={work.link}>Figma</Link>
+        View full project on{" "}
+        <Link href={work.link} target="_blank">
+          Figma
+        </Link>
       </LinkContainer>
       <SubSection>
         <SubTitle>wireframe:</SubTitle>
@@ -69,7 +72,7 @@ const LinkContainer = styled.div`
   font-size: ${(props) => props.theme.fontSize.xl};
 `;
 
-const Link = styled(NavLink)`
+const Link = styled.a`
   all: unset;
   text-decoration: underline;
   cursor: pointer;

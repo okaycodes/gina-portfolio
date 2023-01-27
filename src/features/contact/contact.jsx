@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Button from "../ui/button";
 
 export default function ContactsContainer() {
   return (
@@ -7,15 +6,25 @@ export default function ContactsContainer() {
       <Content>
         <p>you can contact me via the following channels</p>
         <p>email: georginariebelle@gmail.com</p>
-        <p>linkedIn: wwww.linkedin.com/georginariebelle</p>
+        <p>linkedIn: www.linkedin.com/georginariebelle</p>
 
         <FlexContainer>
-          <Button variant="ICON" iconType="image" animateIconSize>
+          <ContactLink
+            variant="ICON"
+            iconType="image"
+            animateIconSize
+            href="mailto: georginariebelle@gmail.com"
+          >
             <img src="../../images/icons/email.svg" />
-          </Button>
-          <Button variant="ICON" iconType="image" animateIconSize>
+          </ContactLink>
+          <ContactLink
+            variant="ICON"
+            iconType="image"
+            animateIconSize
+            href="https://www.linkedin.com/georginariebelle"
+          >
             <img src="../../images/icons/linkedIn.svg" />
-          </Button>
+          </ContactLink>
         </FlexContainer>
       </Content>
     </Container>
@@ -59,4 +68,39 @@ const FlexContainer = styled.div`
   align-items: center;
   margin-top: 100px;
   gap: 0.5em;
+`;
+
+const ContactLink = styled.a`
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0em;
+  background: none;
+  border: none;
+  width: 68px;
+  height: 60px;
+  border-radius: 4px;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+
+  transition: transform 200ms;
+
+  & img {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+
+  &:hover {
+    transform: scale(110%);
+  }
+
+  @media (min-width: ${(props) => props.theme.bp.sm}) {
+    ${(props) =>
+      props.iconType === "image" &&
+      `width: 88px;
+       height: 80px;
+       border-radius: 3px;`}
+  }
 `;

@@ -24,6 +24,7 @@ const Container = styled.li`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  max-width: 420px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3);
@@ -37,7 +38,7 @@ const Container = styled.li`
 `;
 
 const Description = styled.div`
-  padding: 0 1em;
+  padding: 0 1.5em;
   bottom: 0;
   width: 100%;
   font-size: 14px;
@@ -47,6 +48,7 @@ const Description = styled.div`
 const Title = styled.h3`
   font-size: ${(props) => props.theme.fontSize.m};
   color: ${(props) => props.theme.colors.primary};
+  text-transform: capitalize;
 `;
 
 const Intro = styled.p`
@@ -56,11 +58,11 @@ const Intro = styled.p`
 `;
 
 const ImagesContainer = styled.div`
-  padding-top: 1em;
+  padding-top: 1.5em;
   display: flex;
   justify-content: center;
   width: 80%;
-  height: 80%;
+  //   height: 67%;
 `;
 
 const Image = styled.img`

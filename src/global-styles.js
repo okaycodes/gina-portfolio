@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import mistral from "./assets/fonts/mistral/mistral.ttf";
 
 export const GlobalStyles = createGlobalStyle`
     html, body {
@@ -16,4 +17,10 @@ export const GlobalStyles = createGlobalStyle`
     *{
       box-sizing: border-box;
     }
+
+    @font-face {
+      font-family: "mistral";
+      src: url(${mistral}) format("truetype");
+      font-weight: bold;
+     }
 `;

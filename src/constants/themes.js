@@ -16,6 +16,10 @@ const darkTheme = {
     linkText: purple[400],
     primary: purple[400],
     disabled: neutral[200],
+    neutralWhite: neutral[100],
+    neutralGray: neutral[200],
+    neutralBlack: neutral[300],
+    neutralBlackDarker: neutral[400],
   },
 };
 
@@ -30,4 +34,5 @@ const lightTheme = {
   },
 };
 
-export default { darkTheme, lightTheme };
+const obj = { darkTheme, lightTheme };
+export default obj;

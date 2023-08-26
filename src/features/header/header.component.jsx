@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
+import MenuIcon from "../../assets/icons/menu";
 import { CgShapeRhombus } from "react-icons/cg";
 import { IoCloseOutline } from "react-icons/io5";
 
@@ -40,7 +40,7 @@ export default function Header() {
   return (
     <Container scrollPastHeader={scrollPastHeader}>
       <Inner>
-        <Logo to="../">Gina Riebelle</Logo>
+        <Logo to="../">Gina</Logo>
 
         <Nav showMenu={showMenu} ref={navRef}>
           <NavList>
@@ -76,7 +76,7 @@ const Container = styled.header`
   position: fixed;
   z-index: 2;
   width: 100%;
-  background-color: ${(props) => props.theme.colors.bg};
+  background-color: ${(props) => props.theme.colors.neutralBlackDarker};
   box-shadow: ${(props) =>
     props.scrollPastHeader
       ? "0px 3px 5px 0px rgba(0, 0, 0, 0.3)"
@@ -93,12 +93,12 @@ const Inner = styled.div`
 `;
 const Logo = styled(Link)`
   all: unset;
+  font-family: mistral;
   cursor: pointer;
   font-size: ${(props) => props.theme.fontSize.xl2};
-  color: ${(props) => props.theme.colors.primary};
 `;
 
-const Hamburger = styled(FaBars)`
+const Hamburger = styled(MenuIcon)`
   cursor: pointer;
   font-size: 25px;
   margin-left: 1em;
@@ -130,7 +130,7 @@ const CloseIcon = styled(IoCloseOutline)`
 const Nav = styled.nav`
   margin: 0;
   position: fixed;
-  background-color: ${(props) => props.theme.colors.bg};
+  background-color: ${(props) => props.theme.colors.neutralBlackDarker};
   width: 75%;
   max-width: 400px;
   height: 100%;

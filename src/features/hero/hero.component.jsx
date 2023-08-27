@@ -9,6 +9,18 @@ export default function HeroContainer() {
     loop: false,
   });
 
+  const handleDownload = () => {
+    fetch("./pdf/georgina_riebelle.pdf").then((response) => {
+      response.blob().then((blob) => {
+        const fileURL = window.URL.createObjectURL(blob);
+        let alink = document.createElement("a");
+        alink.href = fileURL;
+        alink.download = "georgina_riebelle_resume.pdf";
+        alink.click();
+      });
+    });
+  };
+
   return (
     <Container id="about">
       <Overlay>
@@ -22,7 +34,9 @@ export default function HeroContainer() {
           </TypeWritterWrapper>
           <Text>Products and Brands</Text>
           <ButtonsWrapper>
-            <Button variant="SECONDARY">Download Resume</Button>
+            <Button variant="SECONDARY" onClick={handleDownload}>
+              Download Resume
+            </Button>
             <Button>View Projects</Button>
           </ButtonsWrapper>
         </Inner>

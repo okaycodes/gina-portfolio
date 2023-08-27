@@ -1,4 +1,4 @@
-export default function MenuIcon() {
+export default function MenuIcon({ className, onClick }) {
   return (
     <svg
       width="52"
@@ -6,6 +6,8 @@ export default function MenuIcon() {
       viewBox="0 0 52 34"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
+      className={className}
     >
       <g id="Frame 1">
         <g id="Line 3" filter="url(#filter0_d_565_357)">

@@ -75,44 +75,6 @@ export const works = [
 
   {
     id: "3",
-    title: "fendart tracking",
-    primaryColor: "#FC7567",
-    link: "https://www.figma.com/proto/woWKHNHa0laYiNKMNMzRUb/fendart-track?page-id=58%3A2&node-id=58%3A293&viewport=110%2C22%2C0.29&scaling=scale-down&starting-point-node-id=58%3A293",
-    shortDescription: "A platform that helps you track your orders",
-    tags: "Research, UI/UX, Branding, Testing",
-
-    decription: {
-      title: "Tracker App",
-      details: `this project was a challenge and a very interesting project to make,
-                i wasnt satified with the wireframe until i saw the finished 
-                design and i saw how effectively i coud solve the users problem`,
-    },
-
-    images: {
-      designProcess: "../../images/works/fendart-tracking/design-process.png",
-      userPersona: "../../images/works/fendart-tracking/persona.png",
-      thumbnail: "../../images/works/fendart-tracking/thumbnail.png",
-      userFlow: "../../images/works/fendart-tracking/user-flow.png",
-      userJourney: "../../images/works/fendart-tracking/user-journey.png",
-      lowFidelity: [
-        "../../images/works/fendart-tracking/lofi1.png",
-        "../../images/works/fendart-tracking/lofi2.png",
-        "../../images/works/fendart-tracking/lofi3.png",
-        "../../images/works/fendart-tracking/lofi4.png",
-      ],
-      highFidelity: [
-        "../../images/works/fendart-tracking/hifi1.png",
-        "../../images/works/fendart-tracking/hifi2.png",
-        "../../images/works/fendart-tracking/hifi3.png",
-        "../../images/works/fendart-tracking/hifi4.png",
-        "../../images/works/fendart-tracking/hifi5.png",
-        "../../images/works/fendart-tracking/hifi6.png",
-      ],
-    },
-  },
-
-  {
-    id: "4",
     title: "ella pizza",
     primaryColor: "#F8996C",
     shortDescription: `A platform that allows you to get fresh and refreshing pizza`,
@@ -146,6 +108,44 @@ export const works = [
         "../../images/works/ella-pizza/hifi4.png",
         "../../images/works/ella-pizza/hifi5.png",
         "../../images/works/ella-pizza/hifi6.png",
+      ],
+    },
+  },
+
+  {
+    id: "4",
+    title: "fendart tracking",
+    primaryColor: "#FC7567",
+    link: "https://www.figma.com/proto/woWKHNHa0laYiNKMNMzRUb/fendart-track?page-id=58%3A2&node-id=58%3A293&viewport=110%2C22%2C0.29&scaling=scale-down&starting-point-node-id=58%3A293",
+    shortDescription: "A platform that helps you track your orders",
+    tags: "Research, UI/UX, Branding, Testing",
+
+    decription: {
+      title: "Tracker App",
+      details: `this project was a challenge and a very interesting project to make,
+               i wasnt satified with the wireframe until i saw the finished 
+               design and i saw how effectively i coud solve the users problem`,
+    },
+
+    images: {
+      designProcess: "../../images/works/fendart-tracking/design-process.png",
+      userPersona: "../../images/works/fendart-tracking/persona.png",
+      thumbnail: "../../images/works/fendart-tracking/thumbnail.png",
+      userFlow: "../../images/works/fendart-tracking/user-flow.png",
+      userJourney: "../../images/works/fendart-tracking/user-journey.png",
+      lowFidelity: [
+        "../../images/works/fendart-tracking/lofi1.png",
+        "../../images/works/fendart-tracking/lofi2.png",
+        "../../images/works/fendart-tracking/lofi3.png",
+        "../../images/works/fendart-tracking/lofi4.png",
+      ],
+      highFidelity: [
+        "../../images/works/fendart-tracking/hifi1.png",
+        "../../images/works/fendart-tracking/hifi2.png",
+        "../../images/works/fendart-tracking/hifi3.png",
+        "../../images/works/fendart-tracking/hifi4.png",
+        "../../images/works/fendart-tracking/hifi5.png",
+        "../../images/works/fendart-tracking/hifi6.png",
       ],
     },
   },

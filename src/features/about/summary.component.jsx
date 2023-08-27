@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Workspace from "../../assets/images/workspace.png";
 
-export default function AboutSummaryContainer() {
+export default function AboutSummaryContainer({ showImage = true }) {
   return (
     <Container>
       <TextWrapper>
@@ -17,9 +17,11 @@ export default function AboutSummaryContainer() {
           time bringing your design ideas to life.
         </Text>
       </TextWrapper>
-      <ImageContainer>
-        <img src={Workspace} alt="" />
-      </ImageContainer>
+      {showImage && (
+        <ImageContainer>
+          <img src={Workspace} alt="" />
+        </ImageContainer>
+      )}
     </Container>
   );
 }

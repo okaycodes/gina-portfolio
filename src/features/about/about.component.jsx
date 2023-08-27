@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import HeroContainer from "../hero/hero.component";
+import Luffy from "../../assets/images/luffy.jpeg";
+import AboutSummaryContainer from "./summary.component";
 
 export default function AboutContainer() {
   const goals = [
@@ -10,7 +11,14 @@ export default function AboutContainer() {
   return (
     <Container>
       <Content>
-        <HeroContainer />
+        <HeroContainer>
+          <Overlay>
+            <Inner>
+              <h3>About Me</h3>
+            </Inner>
+          </Overlay>
+        </HeroContainer>
+        <AboutSummaryContainer showImage={false} />
         <Goals>
           {goals.map((goal) => (
             <GoalItem>{goal}</GoalItem>
@@ -23,11 +31,6 @@ export default function AboutContainer() {
 
 const Container = styled.div`
   padding-top: 100px;
-  background-image: url("../../images/polygons/pink.svg"),
-    url("../../images/polygons/purple.svg");
-  background-position: 10% 100px, 95% 35%;
-  background-repeat: no-repeat, no-repeat;
-  background-size: 180px;
   max-width: ${(props) => props.theme.bp.xl};
   margin: 0 auto;
 
@@ -38,6 +41,48 @@ const Container = styled.div`
   @media (min-width: ${(props) => props.theme.bp.md}) {
     background-position: 10% 100px, 95% 45%;
     background-size: 250px;
+  }
+`;
+
+const HeroContainer = styled.main`
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  background-color: black;
+  background-image: url(${Luffy});
+  background-size: cover;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  font-family: ${(props) => props.theme.fontFamily.secondary};
+  font-size: ${(props) => props.theme.fontSize.xl3};
+`;
+
+export const Overlay = styled.div`
+  opacity: 0.85;
+  width: 100%;
+  background-color: ${(props) => props.theme.colors.neutralBlackDarker};
+`;
+
+export const Inner = styled.div`
+  padding: 160px 0 100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  max-width: 750px;
+  font-weight: bold;
+  font-size: ${(props) => props.theme.fontSize.xl2};
+
+  @media (min-width: ${(props) => props.theme.bp.md}) {
+    font-size: ${(props) => props.theme.fontSize.xl3};
+    line-height: 1.6;
+  }
+
+  @media (min-width: ${(props) => props.theme.bp.lg}) {
+    font-size: ${(props) => props.theme.fontSize.xl4};
+    line-height: 1.6;
   }
 `;
 

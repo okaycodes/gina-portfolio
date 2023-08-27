@@ -13,24 +13,67 @@ export default function WorkContainer({ id }) {
           Figma
         </Link>
       </LinkContainer>
+
       <SubSection>
-        <SubTitle>wireframe:</SubTitle>
-        <Image src={work.images.wireframe} alt="project wireframe" />
+        <SubTitle>Your favorite pizza delivered to you</SubTitle>
+        <Image src={work.images.thumbnail} alt="hero" />
       </SubSection>
 
       <SubSection>
-        <SubTitle>thoughts:</SubTitle>
-        <Text>{work.thoughts}</Text>
+        <Card primaryColor={work.primaryColor}>
+          <h3>{work.decription.title}</h3>
+          <p>{work.decription.details}</p>
+        </Card>
       </SubSection>
 
       <SubSection>
-        <SubTitle>user persona:</SubTitle>
-        <Image src={work.images.userPersona} alt="user persona" />
+        <SubTitle primaryColor={work.primaryColor}>Design Process</SubTitle>
+        <Image src={work.images.designProcess} alt="desgin process" />
+      </SubSection>
+
+      {work.images.userPersona && (
+        <SubSection>
+          <SubTitle primaryColor={work.primaryColor}>Persona</SubTitle>
+          <Image src={work.images.userPersona} alt="user persona" />
+        </SubSection>
+      )}
+
+      {work.images.userFlow && (
+        <SubSection>
+          <SubTitle primaryColor={work.primaryColor}>User Flow</SubTitle>
+          <Image src={work.images.userFlow} alt="user flow" />
+        </SubSection>
+      )}
+
+      {work.images.userJourney && (
+        <SubSection>
+          <SubTitle primaryColor={work.primaryColor}>User Journey</SubTitle>
+          <Image src={work.images.userJourney} alt="user flow" />
+        </SubSection>
+      )}
+
+      <SubSection>
+        <SubTitle primaryColor={work.primaryColor}>
+          Low Fidelity Mock Ups
+        </SubTitle>
+        <ImageList>
+          {work.images.lowFidelity.map((img) => (
+            <ImageContainer>
+              <Image src={img} alt="low fidelity mock up" />
+            </ImageContainer>
+          ))}
+        </ImageList>
       </SubSection>
 
       <SubSection>
-        <SubTitle>high fidelity mock up:</SubTitle>
-        <Image src={work.images.highFidelity} alt="high fidelity design" />
+        <SubTitle primaryColor={work.primaryColor}>High Fidelity</SubTitle>
+        <ImageList>
+          {work.images.highFidelity.map((img) => (
+            <ImageContainer>
+              <Image src={img} alt="high fidelity designs" />
+            </ImageContainer>
+          ))}
+        </ImageList>
       </SubSection>
     </Container>
   );
@@ -43,7 +86,7 @@ const Container = styled.section`
   margin: 0 auto;
   align-items: center;
   width: 85%;
-  max-width: 700px;
+  max-width: 960px;
 `;
 
 const Title = styled.h1`
@@ -53,18 +96,31 @@ const Title = styled.h1`
 
 const SubSection = styled.article`
   align-self: stretch;
-  margin-bottom: 10px;
+  margin-bottom: 3em;
   text-transform: capitalize;
+`;
+
+const ImageContainer = styled.div`
+  min-width: 200px;
+  max-width: 200px;
+`;
+
+const ImageList = styled.div`
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-items: center;
+  overflow: scroll;
 `;
 
 const Image = styled.img`
   width: 100%;
 `;
 
-const Text = styled.p``;
-
 const SubTitle = styled.h2`
   font-size: 20px;
+  font-family: ${(props) => props.theme.fontFamily.primary};
+  color: ${(props) => props.primaryColor};
 `;
 
 const LinkContainer = styled.div`
@@ -85,5 +141,32 @@ const Link = styled.a`
   &:focus,
   &:hover {
     color: blue;
+  }
+`;
+
+const Card = styled.section`
+  padding: 1em;
+  border-radius: 6px;
+  color: ${(props) => props.theme.colors.neutralBlack};
+  font-size: ${(props) => props.theme.fontSize.s};
+  background-color: ${(props) => props.theme.colors.neutralGrayLight};
+
+  & h3 {
+    color: ${(props) => props.primaryColor};
+  }
+
+  @media (min-width: ${(props) => props.theme.bp.sm}) {
+    font-size: ${(props) => props.theme.fontSize.m};
+  }
+
+  @media (min-width: ${(props) => props.theme.bp.md}) {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    font-size: ${(props) => props.theme.fontSize.m};
+
+    & h3 {
+      flex-basis: 300px;
+    }
   }
 `;

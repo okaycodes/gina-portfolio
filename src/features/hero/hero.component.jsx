@@ -1,71 +1,111 @@
 import styled from "styled-components";
+import Luffy from "../../assets/images/luffy.jpeg";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
+import Button from "../ui/button";
 
 export default function HeroContainer() {
+  const [text] = useTypewriter({
+    words: ["Research", "Design", "Support"],
+    loop: false,
+  });
+
   return (
     <Container id="about">
-      <Intro>
-        <Text> Hi there, my name is </Text>
-        <Title>Georgina Riebelle</Title>
-      </Intro>
-
-      <Text>
-        I am a user experience and user interactive designer with a skill set
-        covering different areas and technologies including Figma, AdobeXd,
-        Adobe Photoshop, Motion Design etc.{" "}
-      </Text>
-      <Text>
-        I strive to solve design problems by bringing your design ideas to life
-        with my unique expertise and experience.
-      </Text>
+      <Overlay>
+        <Inner>
+          <Text> Hi there, 👋🏾</Text>
+          <Text> My Name is Gina and</Text>
+          <TypeWritterWrapper>
+            <Text> i </Text>
+            <TypeWritterText text={text}>{text}</TypeWritterText>
+            <Cursor cursorColor="white" />
+          </TypeWritterWrapper>
+          <Text>Products and Brands</Text>
+          <ButtonsWrapper>
+            <Button variant="SECONDARY">Download Resume</Button>
+            <Button>View Projects</Button>
+          </ButtonsWrapper>
+        </Inner>
+      </Overlay>
     </Container>
   );
 }
 
 export const Container = styled.main`
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  background-color: black;
+  background-image: url(${Luffy});
+  background-size: cover;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  font-family: ${(props) => props.theme.fontFamily.secondary};
+  font-size: ${(props) => props.theme.fontSize.xl3};
+`;
+
+export const Overlay = styled.div`
+  opacity: 0.85;
+  width: 100%;
+  background-color: ${(props) => props.theme.colors.neutralBlackDarker};
+`;
+
+export const Inner = styled.div`
+  padding: 160px 0 100px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
   justify-content: center;
-  padding-top: 160px;
   width: 85%;
   max-width: 750px;
-`;
-
-export const Title = styled.h1`
-  margin: 0;
-  padding: 0;
-  color: ${(props) => props.theme.colors.primary};
+  font-weight: bold;
   font-size: ${(props) => props.theme.fontSize.xl2};
-  display: inline;
 
-  @media (min-width: ${(props) => props.theme.bp.sm}) {
+  @media (min-width: ${(props) => props.theme.bp.md}) {
     font-size: ${(props) => props.theme.fontSize.xl3};
+    line-height: 1.6;
+  }
+
+  @media (min-width: ${(props) => props.theme.bp.lg}) {
+    font-size: ${(props) => props.theme.fontSize.xl4};
     line-height: 1.6;
   }
 `;
 
-export const Text = styled.p`
-  font-size: ${(props) => props.theme.fontSize.xl};
-  @media (min-width: ${(props) => props.theme.bp.sm}) {
-    font-size: ${(props) => props.theme.fontSize.xl1};
-  }
+export const TypeWritterWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
 `;
 
-const Intro = styled.section`
-  align-self: stretch;
-  text-align: left;
-
-  & ${Text} {
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-  }
-
-  @media (min-width: ${(props) => props.theme.bp.sm}) {
-    & ${Text} {
-      display: inline;
-      font-size: ${(props) => props.theme.fontSize.xl1};
+export const TypeWritterText = styled.div`
+  color: ${(props) => {
+    switch (props.text[0]) {
+      case "R":
+        return "yellow";
+      case "D":
+        return "cyan";
+      case "S":
+        return "magenta";
+      default:
+        return "white";
     }
-  }
+  }};
+  margin-left: 8px;
+  text-align: center;
+`;
+
+export const Text = styled.p`
+  padding: 0;
+  margin: 0;
+`;
+
+const ButtonsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
 `;

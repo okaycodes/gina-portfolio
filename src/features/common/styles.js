@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const SectionBaseStyles = styled.section`
   display: flex;
   flex-direction: column;
+  width: 90%;
   max-width: 1100px;
   align-items: center;
   margin: 0 auto;

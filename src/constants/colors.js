@@ -1,5 +1,5 @@
 export const purple = {
-  400: "#85126C",
+  400: "#D777EF",
 };
 
 export const neutral = {

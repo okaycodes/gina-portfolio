@@ -4,7 +4,7 @@ import Button from "../ui/button";
 
 export default function WorkItem({ work }) {
   const navigate = useNavigate();
-  const { title, images, tags, description, bgColor } = work;
+  const { title, images, tags, shortDescription, bgColor } = work;
 
   return (
     <Container bgColor={bgColor} onClick={() => navigate(`works/${work.id}`)}>
@@ -14,7 +14,7 @@ export default function WorkItem({ work }) {
       <Description>
         <Title>{title}</Title>
         <Tags>{tags}</Tags>
-        <Intro>{description}</Intro>
+        <Intro>{shortDescription}</Intro>
       </Description>
       <Button>view project</Button>
     </Container>

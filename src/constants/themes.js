@@ -17,6 +17,7 @@ const darkTheme = {
     primary: purple[400],
     disabled: neutral[200],
     neutralWhite: neutral[100],
+    neutralGrayLight: neutral[150],
     neutralGray: neutral[200],
     neutralBlack: neutral[300],
     neutralBlackDarker: neutral[400],

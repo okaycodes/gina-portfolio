@@ -51,6 +51,10 @@ const SkillList = styled.ul`
   list-style: none;
   padding: 0;
   margin-bottom: 100px;
+
+  @media (min-width: ${(props) => props.theme.bp.md}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 const SkillCard = styled.li`

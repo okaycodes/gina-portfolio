@@ -19,9 +19,9 @@ export default function WorksListContainer() {
 }
 
 const Container = styled(SectionBaseStyles)`
-   width: 90%
-   max-width: ${(props) => props.theme.bp.xl};
-   margin-top: 50px;
+  width: 90%;
+  max-width: ${(props) => props.theme.bp.xl};
+  margin-top: 50px;
 `;
 
 const List = styled.ul`

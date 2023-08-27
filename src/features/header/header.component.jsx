@@ -93,7 +93,7 @@ const Inner = styled.div`
 `;
 const Logo = styled(Link)`
   all: unset;
-  font-family: mistral;
+  font-family: ${(props) => props.theme.fontFamily.tertiary};
   cursor: pointer;
   font-size: ${(props) => props.theme.fontSize.xl2};
 `;

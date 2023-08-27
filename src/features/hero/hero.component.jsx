@@ -39,6 +39,7 @@ export const Container = styled.main`
   background-size: cover;
   background-position: 50% 0;
   background-repeat: no-repeat;
+  font-family: ${(props) => props.theme.fontFamily.secondary};
   font-size: ${(props) => props.theme.fontSize.xl3};
 `;
 

@@ -49,6 +49,8 @@ const Base = styled.button`
   padding: 0.8em 1.2em;
   cursor: pointer;
   transition: all 300ms;
+  font-family: ${(props) => props.theme.fontFamily.secondary};
+
   &:disabled {
     cursor: auto;
     color: ${(props) => props.theme.colors.disabled};

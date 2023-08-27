@@ -34,6 +34,7 @@ export const Container = styled.section`
   margin: 0 auto;
   width: 100%;
   background-color: black;
+  font-family: ${(props) => props.theme.fontFamily.secondary};
 `;
 
 export const CertList = styled.div`

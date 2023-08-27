@@ -9,4 +9,8 @@ export const fontSize = {
   xs: "0.7rem",
 };
 
-export const fontFamily = { primary: '"Roboto Mono", monospace' };
+export const fontFamily = {
+  primary: '"Roboto Mono", sans-serif',
+  secondary: "Rockwell, monospace",
+  tertiary: "Mistral, cursive",
+};

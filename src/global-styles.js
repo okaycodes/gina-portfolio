@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import mistral from "./assets/fonts/mistral/mistral.ttf";
+import Mistral from "./assets/fonts/mistral/Mistral.ttf";
+import Rockwell from "./assets/fonts/rockwell/Rockwell.ttf";
 
 export const GlobalStyles = createGlobalStyle`
     html, body {
@@ -19,8 +20,17 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     @font-face {
-      font-family: "mistral";
-      src: url(${mistral}) format("truetype");
+      font-family: "Mistral";
+      src: url(${Mistral}) format("truetype");
       font-weight: bold;
      }
+
+     @font-face {
+      font-family: "Rockwell";
+      src: url(${Rockwell}) format("truetype");
+     }
+
+     h1,h2,h3{
+      font-family: Rockwell;
+    }
 `;

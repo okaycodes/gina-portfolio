@@ -56,7 +56,7 @@ const Goals = styled.ul`
     margin-left: 70px;
     font-size: ${(props) => props.theme.fontSize.xl1};
     max-width: ${(props) => props.theme.bp.sm};
-  } ;
+  }
 `;
 
 const GoalItem = styled.li`

@@ -3,7 +3,7 @@ export const works = [
     id: "1",
     title: "swift bank",
     primaryColor: "#73A3BC",
-    link: "https://www.figma.com/proto/woWKHNHa0laYiNKMNMzRUb/fendart-track?page-id=58%3A2&node-id=58%3A293&viewport=110%2C22%2C0.29&scaling=scale-down&starting-point-node-id=58%3A293",
+    link: "https://www.figma.com/proto/YOZY5IhulWLdhb9TE4BkAw/bank?page-id=14%3A499&type=design&node-id=14-4067&viewport=486%2C52%2C0.07&t=eMX2aQwqddj9pNzN-1&scaling=contain&starting-point-node-id=14%3A4067",
     shortDescription: `A banking platform that uses your phone number to create your account. `,
     tags: "Research, UI/UX, Branding, Testing",
 
@@ -42,7 +42,7 @@ export const works = [
     id: "2",
     title: "genshin merch shop",
     primaryColor: "#C3B0CB",
-    link: "https://www.figma.com/proto/AMnDxJvKRA3rPRjdn9BWl0/Untitled?page-id=41%3A1094&node-id=41%3A1095&viewport=107%2C392%2C0.25&scaling=scale-down&starting-point-node-id=41%3A1095",
+    link: "https://www.figma.com/proto/O7pHbaLT6vH1PEeOo6OO2E/genshin?page-id=0%3A1&type=design&node-id=1-96&viewport=218%2C61%2C0.5&t=AoY7piczBdOW8c4o-1&scaling=scale-down&starting-point-node-id=1%3A96",
     shortDescription: `A simple mobile application to showcase, a simple flowing animation`,
     tags: "Research, UI/UX, Branding, Testing",
 
@@ -77,6 +77,7 @@ export const works = [
     id: "3",
     title: "ella pizza",
     primaryColor: "#F8996C",
+    link: "https://www.figma.com/proto/CBu18eCQQSrK33kQIsxbPA/ella-pizza?page-id=0%3A1&type=design&node-id=1-23&viewport=139%2C169%2C0.12&t=zIiyaiG17I2gnoZh-1&scaling=scale-down&starting-point-node-id=1%3A6831&show-proto-sidebar=1&mode=design&fuid=1095395321379654204",
     shortDescription: `A platform that allows you to get fresh and refreshing pizza`,
     tags: "Research, UI/UX, Branding, Testing",
 
@@ -116,7 +117,7 @@ export const works = [
     id: "4",
     title: "fendart tracking",
     primaryColor: "#FC7567",
-    link: "https://www.figma.com/proto/woWKHNHa0laYiNKMNMzRUb/fendart-track?page-id=58%3A2&node-id=58%3A293&viewport=110%2C22%2C0.29&scaling=scale-down&starting-point-node-id=58%3A293",
+    link: "https://www.figma.com/proto/woWKHNHa0laYiNKMNMzRUb/fendart-track?page-id=301%3A243&type=design&node-id=301-536&viewport=77%2C540%2C0.3&t=lriKutLY4tqy0gtt-1&scaling=scale-down&starting-point-node-id=301%3A510",
     shortDescription: "A platform that helps you track your orders",
     tags: "Research, UI/UX, Branding, Testing",
 

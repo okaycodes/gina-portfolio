@@ -46,7 +46,7 @@ export default function Button({
 }
 
 const Base = styled.button`
-  padding: 0.5em 1.2em;
+  padding: 0.8em 1.2em;
   cursor: pointer;
   transition: all 300ms;
   &:disabled {
@@ -56,27 +56,34 @@ const Base = styled.button`
 `;
 
 const PrimaryButton = styled(Base)`
+  font-size: ${(props) => props.theme.fontSize.lg};
   border: none;
-  color: ${(props) => props.theme.colors.bg};
-  background-color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.neutralWhite};
+  background-color: inherit;
   background-color: ${(props) => props.isActive && props.theme.colors.text};
+  border: solid white 2px;
+  border-radius: 25px;
+  margin: 1em 0;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.text};
+    background-color: ${(props) => props.theme.colors.primary};
   }
 `;
 
 const SecondaryButton = styled(Base)`
-  padding: 1em 2em;
-  border-radius: 5px;
+  border-radius: 25px;
+  border: none;
   color: ${(props) => props.theme.colors.text};
-  font-size: ${(props) => props.theme.fontSize.xl1};
-  background-color: ${(props) => props.theme.colors.bg};
-  border: 2px solid ${(props) => props.theme.colors.primary};
+  font-size: ${(props) => props.theme.fontSize.lg};
+  background: rgb(122, 157, 210);
+  background: linear-gradient(
+    180deg,
+    rgba(122, 157, 210, 1) 0%,
+    rgba(185, 23, 225, 1) 100%
+  );
 
   &:hover {
-    color: ${(props) => props.theme.colors.bg};
-    background-color: ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.neutralBlackDarker};
   }
 `;
 

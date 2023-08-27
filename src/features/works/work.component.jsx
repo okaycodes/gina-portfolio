@@ -13,6 +13,7 @@ export default function WorkContainer({ id }) {
           Figma
         </Link>
       </LinkContainer>
+
       <SubSection>
         <SubTitle>Your favorite pizza delivered to you</SubTitle>
         <Image src={work.images.thumbnail} alt="hero" />
@@ -24,6 +25,7 @@ export default function WorkContainer({ id }) {
           <p>{work.decription.details}</p>
         </Card>
       </SubSection>
+
       <SubSection>
         <SubTitle primaryColor={work.primaryColor}>Design Process</SubTitle>
         <Image src={work.images.designProcess} alt="desgin process" />
@@ -94,7 +96,7 @@ const Title = styled.h1`
 
 const SubSection = styled.article`
   align-self: stretch;
-  margin-bottom: 10px;
+  margin-bottom: 3em;
   text-transform: capitalize;
 `;
 
@@ -151,5 +153,20 @@ const Card = styled.section`
 
   & h3 {
     color: ${(props) => props.primaryColor};
+  }
+
+  @media (min-width: ${(props) => props.theme.bp.sm}) {
+    font-size: ${(props) => props.theme.fontSize.m};
+  }
+
+  @media (min-width: ${(props) => props.theme.bp.md}) {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    font-size: ${(props) => props.theme.fontSize.m};
+
+    & h3 {
+      flex-basis: 300px;
+    }
   }
 `;

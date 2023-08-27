@@ -21,9 +21,10 @@ export default function HeroContainer() {
             <Cursor cursorColor="white" />
           </TypeWritterWrapper>
           <Text>Products and Brands</Text>
-
-          <Button variant="SECONDARY">Download Resume</Button>
-          <Button>View Projects</Button>
+          <ButtonsWrapper>
+            <Button variant="SECONDARY">Download Resume</Button>
+            <Button>View Projects</Button>
+          </ButtonsWrapper>
         </Inner>
       </Overlay>
     </Container>
@@ -61,8 +62,13 @@ export const Inner = styled.div`
   font-weight: bold;
   font-size: ${(props) => props.theme.fontSize.xl2};
 
-  @media (min-width: ${(props) => props.theme.bp.sm}) {
+  @media (min-width: ${(props) => props.theme.bp.md}) {
     font-size: ${(props) => props.theme.fontSize.xl3};
+    line-height: 1.6;
+  }
+
+  @media (min-width: ${(props) => props.theme.bp.lg}) {
+    font-size: ${(props) => props.theme.fontSize.xl4};
     line-height: 1.6;
   }
 `;
@@ -80,7 +86,7 @@ export const TypeWritterText = styled.div`
       case "R":
         return "yellow";
       case "D":
-        return "green";
+        return "cyan";
       case "S":
         return "magenta";
       default:
@@ -94,4 +100,12 @@ export const TypeWritterText = styled.div`
 export const Text = styled.p`
   padding: 0;
   margin: 0;
+`;
+
+const ButtonsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
 `;

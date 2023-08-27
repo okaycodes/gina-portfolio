@@ -46,7 +46,7 @@ const Container = styled(SectionBaseStyles)``;
 
 const SkillList = styled.ul`
   display: grid;
-  max-width: 800px;
+  max-width: 1000px;
   flex-wrap: wrap;
   list-style: none;
   padding: 0;

@@ -32,7 +32,14 @@ export default function SkillsListContainer() {
   );
 }
 
-const Container = styled(SectionBaseStyles)``;
+const Container = styled(SectionBaseStyles)`
+  display: flex;
+
+  @media (min-width: ${(props) => props.theme.bp.md}) {
+    align-items: start;
+    margin-top: -5em;
+  }
+`;
 
 const SkillList = styled.ul`
   display: grid;
@@ -42,6 +49,10 @@ const SkillList = styled.ul`
   list-style: none;
   padding: 0;
   margin-bottom: 100px;
+
+  @media (min-width: ${(props) => props.theme.bp.md}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 const Skill = styled.li`
@@ -53,5 +64,9 @@ const Skill = styled.li`
   background: ${(props) => props.theme.colors.neutralGray};
   border-radius: 25px;
   gap: 4px;
-  font-size: ${(props) => props.theme.fontSize.lg};
+  font-size: ${(props) => props.theme.fontSize.s};
+
+  @media (min-width: ${(props) => props.theme.bp.md}) {
+    font-size: ${(props) => props.theme.fontSize.lg};
+  }
 `;

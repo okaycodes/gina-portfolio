@@ -13,8 +13,9 @@ export default function CertContainer() {
     { name: "Google Coursera", icon: Coursera },
     { name: "Udemy", icon: Udemy },
   ];
+
   return (
-    <Container id="about">
+    <Container id="certifications">
       <CertList>
         {certList.map((cert) => (
           <CertListItem>
@@ -30,11 +31,17 @@ export default function CertContainer() {
 }
 
 export const Container = styled.section`
+  padding: 2em 0;
   position: relative;
   margin: 0 auto;
   width: 100%;
   background-color: black;
   font-family: ${(props) => props.theme.fontFamily.secondary};
+  font-size: ${(props) => props.theme.fontSize.s};
+
+  @media (min-width: ${(props) => props.theme.bp.md}) {
+    font-size: ${(props) => props.theme.fontSize.m};
+  }
 `;
 
 export const CertList = styled.div`
@@ -70,51 +77,4 @@ export const CertListItem = styled.div`
 export const LogoContainer = styled.div`
   width: 30px;
   height: 30px;
-`;
-
-export const Inner = styled.div`
-  padding: 160px 0 100px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 85%;
-  max-width: 750px;
-  font-weight: bold;
-  font-size: ${(props) => props.theme.fontSize.xl2};
-
-  @media (min-width: ${(props) => props.theme.bp.sm}) {
-    font-size: ${(props) => props.theme.fontSize.xl3};
-    line-height: 1.6;
-  }
-`;
-
-export const TypeWritterWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 200px;
-`;
-
-export const TypeWritterText = styled.div`
-  color: ${(props) => {
-    switch (props.text[0]) {
-      case "R":
-        return "yellow";
-      case "D":
-        return "green";
-      case "S":
-        return "magenta";
-      default:
-        return "white";
-    }
-  }};
-  margin-left: 8px;
-  text-align: center;
-`;
-
-export const Text = styled.p`
-  padding: 0;
-  margin: 0;
 `;

@@ -58,7 +58,7 @@ const Base = styled.button`
 `;
 
 const PrimaryButton = styled(Base)`
-  font-size: ${(props) => props.theme.fontSize.lg};
+  font-size: ${(props) => props.theme.fontSize.m};
   border: none;
   color: ${(props) => props.theme.colors.neutralWhite};
   background-color: inherit;
@@ -70,13 +70,17 @@ const PrimaryButton = styled(Base)`
   &:hover {
     background-color: ${(props) => props.theme.colors.primary};
   }
+
+  @media (min-width: ${(props) => props.theme.bp.md}) {
+    font-size: ${(props) => props.theme.fontSize.lg};
+  }
 `;
 
 const SecondaryButton = styled(Base)`
   border-radius: 25px;
   border: none;
   color: ${(props) => props.theme.colors.text};
-  font-size: ${(props) => props.theme.fontSize.lg};
+  font-size: ${(props) => props.theme.fontSize.m};
   background: rgb(122, 157, 210);
   background: linear-gradient(
     180deg,
@@ -86,6 +90,10 @@ const SecondaryButton = styled(Base)`
 
   &:hover {
     color: ${(props) => props.theme.colors.neutralBlackDarker};
+  }
+
+  @media (min-width: ${(props) => props.theme.bp.md}) {
+    font-size: ${(props) => props.theme.fontSize.lg};
   }
 `;
 

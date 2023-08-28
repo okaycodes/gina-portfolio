@@ -54,10 +54,7 @@ export const works = [
 
     images: {
       designProcess: "../../images/works/genshin/design-process.png",
-      userPersona: "../../images/works/genshin/persona.png",
       thumbnail: "../../images/works/genshin/thumbnail.jpeg",
-      userFlow: "../../images/works/genshin/user-flow.png",
-      userJourney: "../../images/works/genshin/user-journey.png",
       lowFidelity: [
         "../../images/works/genshin/lofi1.png",
         "../../images/works/genshin/lofi2.png",

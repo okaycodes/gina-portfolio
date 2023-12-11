@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { BiCopyright } from "react-icons/bi";
 
 export default function Footer() {
+  const date = new Date();
   return (
     <Container>
       <BiCopyright />
-      <p>Riebelle Tega Georgina 2023</p>
+      <p>Riebelle Tega Georgina {date.getFullYear()}</p>
     </Container>
   );
 }

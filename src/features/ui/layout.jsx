@@ -25,6 +25,7 @@ export default function PageLayout() {
         }
       }, 0);
     }
+    //  eslint-disable-next-line
   }, [pathname, hash, key]);
 
   //

@@ -15,7 +15,7 @@ export default function WorkContainer({ id }) {
       </LinkContainer>
 
       <SubSection>
-        <SubTitle>Your favorite pizza delivered to you</SubTitle>
+        <SubTitle>{work.title}</SubTitle>
         <Image src={work.images.thumbnail} alt="hero" />
       </SubSection>
 

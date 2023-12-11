@@ -15,7 +15,7 @@ export default function ContactsContainer() {
             animateIconSize
             href="mailto: georginariebelle@gmail.com"
           >
-            <img src="../../images/icons/email.svg" />
+            <img src="../../images/icons/email.svg" alt="email" />
           </ContactLink>
           <ContactLink
             variant="ICON"
@@ -23,7 +23,7 @@ export default function ContactsContainer() {
             animateIconSize
             href="https://www.linkedin.com/georginariebelle"
           >
-            <img src="../../images/icons/linkedIn.svg" />
+            <img src="../../images/icons/linkedIn.svg" alt="linked in" />
           </ContactLink>
         </FlexContainer>
       </Content>

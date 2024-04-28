@@ -1,17 +1,21 @@
 import styled from "styled-components";
-import Udemy from "../../assets/images/udemy-logo.png";
-import Uniben from "../../assets/images/uniben.png";
-import Coursera from "../../assets/images/google-coursera.png";
-import BYOL from "../../assets/images/byol.png";
-import ZerotoMastery from "../../assets/images/zero-to-mastery.png";
+import Figma from "../../assets/images/figma.png";
+import AdobeXd from "../../assets/images/adobexd.png";
+import Photoshop from "../../assets/images/photoshop.png";
+import Illustrator from "../../assets/images/illustrator.png";
+import HTML from "../../assets/images/html5.png";
+import CSS from "../../assets/images/css3.png";
+import Javascript from "../../assets/images/javascript.png";
 
 export default function CertContainer() {
   const certList = [
-    { name: "University of Benin", icon: Uniben },
-    { name: "Zero to Mastery", icon: ZerotoMastery },
-    { name: "Bring Your Own Laptop", icon: BYOL },
-    { name: "Google Coursera", icon: Coursera },
-    { name: "Udemy", icon: Udemy },
+    { name: "Figma", icon: Figma },
+    { name: "Adobe XD", icon: AdobeXd },
+    { name: "Photoshop", icon: Photoshop },
+    { name: "Adobe Illustrator", icon: Illustrator },
+    { name: "HTML", icon: HTML },
+    { name: "CSS", icon: CSS },
+    { name: "JavaScript", icon: Javascript },
   ];
 
   return (
@@ -35,43 +39,50 @@ export const Container = styled.section`
   position: relative;
   margin: 0 auto;
   width: 100%;
-  background-color: black;
-  font-family: ${(props) => props.theme.fontFamily.secondary};
-  font-size: ${(props) => props.theme.fontSize.s};
+  background-color: #323232;
+  display: flex;
+  justify-content: center;
+  font-family: ${({ theme }) => theme.fontFamily.secondary};
+  font-size: ${({ theme }) => theme.fontSize.s};
 
-  @media (min-width: ${(props) => props.theme.bp.md}) {
-    font-size: ${(props) => props.theme.fontSize.m};
+  @media (min-width: ${({ theme }) => theme.bp.md}) {
+    font-size: ${({ theme }) => theme.fontSize.m};
   }
 `;
 
-export const CertList = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+export const CertList = styled.tr`
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
-export const CertListItem = styled.div`
+export const CertListItem = styled.tr`
+  flex-basis: 50%;
+  max-width: 150px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 4px;
+  border: 1px solid #3A3A3A;
+  border-radius: 8px;
+  padding: 20px 0;
+  margin: 5px;
 
-  &:nth-child(1){
-   grid-column: span 2 / span 2;
+  &:hover {
+    transform: scale(1.05)
   }
 
   & img{
    width: 100%;
    object-fit: cover;
    translateY(-20%);
- }
+  }
 
-    &:nth-child(5) img {
-      transform: translateY(35%) scale(150%);
-    }
+  @media (min-width: ${({ theme }) => theme.bp.md}) {
+    flex-basis: 25%;
+  }
 
-    &:nth-child(4) img {
-      transform: translateY(-20%) scale(200%);
-    }
+
 `;
 
 export const LogoContainer = styled.div`

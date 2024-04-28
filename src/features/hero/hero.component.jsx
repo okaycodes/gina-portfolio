@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Luffy from "../../assets/images/luffy.jpeg";
+import Background from "../../assets/images/background.png";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import Button from "../ui/button";
 
@@ -25,21 +25,29 @@ export default function HeroContainer() {
     <Container id="about">
       <Overlay>
         <Inner>
-          <Text> Hi there, 👋🏾</Text>
-          <Text> My Name is Gina and</Text>
+          <Intro>
+            <IntroHeader>Georgina Riebelle</IntroHeader>
+            <Text>
+              {" "}
+              My Name is Gina and I am a Product Designer specializing in User
+              Experience and User Interface Design. I take pride and have real
+              passion for the entire design process from conceptualization and
+              research to creating sitemaps, mockups, low fidelity and high
+              fidelity designs.
+            </Text>
+          </Intro>
+          {/* 
+          <Text>You need me if you are looking for someone who can</Text>
           <TypeWritterWrapper>
-            <Text> i </Text>
             <TypeWritterText text={text}>{text}</TypeWritterText>
             <Cursor cursorColor="white" />
           </TypeWritterWrapper>
-          <Text>Products and Brands</Text>
-          <ButtonsWrapper>
-            <Button variant="SECONDARY" onClick={handleDownload}>
-              Download Resume
-            </Button>
-            <Button>View Projects</Button>
-          </ButtonsWrapper>
+          <Text>Products and Brands</Text> */}
         </Inner>
+        <ButtonsWrapper>
+          <Button onClick={handleDownload}>Download Resume</Button>
+          <Button>View Projects</Button>
+        </ButtonsWrapper>
       </Overlay>
     </Container>
   );
@@ -49,42 +57,61 @@ export const Container = styled.main`
   position: relative;
   margin: 0 auto;
   width: 100%;
-  background-color: black;
-  background-image: url(${Luffy});
-  background-size: cover;
-  background-position: 50% 0;
-  background-repeat: no-repeat;
-  font-family: ${(props) => props.theme.fontFamily.secondary};
-  font-size: ${(props) => props.theme.fontSize.xl3};
+  font-family: ${({ theme }) => theme.fontFamily.secondary};
+  font-size: ${({ theme }) => theme.fontSize.xl4};
+
+  &::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-image: url(${Background});
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+  }
 `;
 
 export const Overlay = styled.div`
   opacity: 0.85;
   width: 100%;
-  background-color: ${(props) => props.theme.colors.neutralBlackDarker};
 `;
 
 export const Inner = styled.div`
-  padding: 160px 0 100px;
+  padding: 200px 0 100px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 85%;
-  max-width: 750px;
-  font-weight: bold;
-  font-size: ${(props) => props.theme.fontSize.xl2};
+  width: 90%;
+  max-width: 1600px;
+  font-size: ${({ theme }) => theme.fontSize.xl2};
 
-  @media (min-width: ${(props) => props.theme.bp.md}) {
-    font-size: ${(props) => props.theme.fontSize.xl3};
+  @media (min-width: ${({ theme }) => theme.bp.md}) {
+    font-size: ${({ theme }) => theme.fontSize.xl3};
     line-height: 1.6;
   }
 
-  @media (min-width: ${(props) => props.theme.bp.lg}) {
-    font-size: ${(props) => props.theme.fontSize.xl4};
+  @media (min-width: ${({ theme }) => theme.bp.lg}) {
+    font-size: ${({ theme }) => theme.fontSize.xl4};
     line-height: 1.6;
   }
+`;
+
+export const Intro = styled.div`
+  width: 90%;
+  max-width: 500px;
+  text-align: justify;
+`;
+
+export const IntroHeader = styled.h2`
+  text-align: center;
+  font-size: ${({ theme }) => theme.fontSize.xl4};
 `;
 
 export const TypeWritterWrapper = styled.div`
@@ -95,8 +122,8 @@ export const TypeWritterWrapper = styled.div`
 `;
 
 export const TypeWritterText = styled.div`
-  color: ${(props) => {
-    switch (props.text[0]) {
+  color: ${({ text }) => {
+    switch (text[0]) {
       case "R":
         return "yellow";
       case "D":
@@ -109,17 +136,19 @@ export const TypeWritterText = styled.div`
   }};
   margin-left: 8px;
   text-align: center;
+  font-size: 24px;
 `;
 
 export const Text = styled.p`
   padding: 0;
   margin: 0;
+  font-size: ${({ theme }) => theme.fontSize.xl};
 `;
 
 const ButtonsWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  gap: 2rem;
   align-items: center;
   justify-content: center;
-  margin-top: 2em;
+  margin-bottom: 3rem;
 `;

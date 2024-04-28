@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import Mistral from "./assets/fonts/mistral/Mistral.ttf";
+import Mistral from "./assets/fonts/mistral/mistral.ttf";
 import Rockwell from "./assets/fonts/rockwell/Rockwell.ttf";
 
 export const GlobalStyles = createGlobalStyle`

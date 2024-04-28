@@ -7,8 +7,9 @@ export default function AboutSummaryContainer({ showImage = true }) {
       <TextWrapper>
         <Title>
           Hi, I'm Gina <br />
-          and I am a product <br />
-          designer.
+          and I am a product designer
+          <br />
+          specializing in <br /> UI/UX development.
         </Title>
         <Text>
           I am a user experience and user interactive designer. with skills in
@@ -27,7 +28,7 @@ export default function AboutSummaryContainer({ showImage = true }) {
 }
 
 const Container = styled.section`
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -59,13 +60,8 @@ const ImageContainer = styled.div`
 
 const TextWrapper = styled.div`
   @media (min-width: ${(props) => props.theme.bp.md}) {
-    width: 60%;
-    max-width: 600px;
-  }
-
-  @media (min-width: ${(props) => props.theme.bp.lg}) {
-    width: 60%;
-    max-width: 600px;
+    width: 90%;
+    max-width: 800px;
   }
 `;
 

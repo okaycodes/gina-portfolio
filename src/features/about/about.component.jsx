@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import Luffy from "../../assets/images/luffy.jpeg";
+import Background from "../../assets/images/background.png";
 import AboutSummaryContainer from "./summary.component";
+import CertContainer from "../certifications/certifications.component";
+import ContactsContainer from "../contact/contact";
 
 export default function AboutContainer() {
   const goals = [
@@ -18,12 +20,16 @@ export default function AboutContainer() {
             </Inner>
           </Overlay>
         </HeroContainer>
+      </Content>
+      <CertContainer />
+      <Content>
         <AboutSummaryContainer showImage={false} />
         <Goals>
           {goals.map((goal) => (
             <GoalItem>{goal}</GoalItem>
           ))}
         </Goals>
+        <ContactsContainer />
       </Content>
     </Container>
   );
@@ -31,7 +37,6 @@ export default function AboutContainer() {
 
 const Container = styled.div`
   padding-top: 100px;
-  max-width: ${(props) => props.theme.bp.xl};
   margin: 0 auto;
 
   @media (min-width: ${(props) => props.theme.bp.sm}) {
@@ -48,8 +53,7 @@ const HeroContainer = styled.main`
   position: relative;
   margin: 0 auto;
   width: 100%;
-  background-color: black;
-  background-image: url(${Luffy});
+  background-image: url(${Background});
   background-size: cover;
   background-position: 50% 0;
   background-repeat: no-repeat;
@@ -60,7 +64,6 @@ const HeroContainer = styled.main`
 export const Overlay = styled.div`
   opacity: 0.85;
   width: 100%;
-  background-color: ${(props) => props.theme.colors.neutralBlackDarker};
 `;
 
 export const Inner = styled.div`
@@ -87,7 +90,7 @@ export const Inner = styled.div`
 `;
 
 const Content = styled.main`
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 `;
 

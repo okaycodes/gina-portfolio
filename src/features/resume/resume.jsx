@@ -15,12 +15,12 @@ export default function ResumeItem({ pageNumber }) {
   const pdfWidth = width * 0.9 <= 900 ? width * 0.9 : 900;
 
   const handleDownload = () => {
-    fetch("./pdf/georgina_riebelle.pdf").then((response) => {
+    fetch("./pdf/gina_riebelle.pdf").then((response) => {
       response.blob().then((blob) => {
         const fileURL = window.URL.createObjectURL(blob);
         let alink = document.createElement("a");
         alink.href = fileURL;
-        alink.download = "georgina_riebelle_resume.pdf";
+        alink.download = "gina_riebelle_resume.pdf";
         alink.click();
       });
     });
@@ -76,10 +76,7 @@ export default function ResumeItem({ pageNumber }) {
           </Button>
         </Actions>
 
-        <Document
-          file={"./pdf/georgina_riebelle.pdf"}
-          externalLinkTarget="_blank"
-        >
+        <Document file={"./pdf/gina_riebelle.pdf"} externalLinkTarget="_blank">
           <Page
             width={pdfWidth}
             pageNumber={pageNumber}

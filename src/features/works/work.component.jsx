@@ -31,50 +31,67 @@ export default function WorkContainer({ id }) {
         <Image src={work.images.designProcess} alt="desgin process" />
       </SubSection>
 
-      {work.images.userPersona && (
+      {work.images.userPersona ? (
         <SubSection>
           <SubTitle primaryColor={work.primaryColor}>Persona</SubTitle>
           <Image src={work.images.userPersona} alt="user persona" />
         </SubSection>
-      )}
+      ) : null}
 
-      {work.images.userFlow && (
+      {work.images.userFlow ? (
         <SubSection>
           <SubTitle primaryColor={work.primaryColor}>User Flow</SubTitle>
           <Image src={work.images.userFlow} alt="user flow" />
         </SubSection>
-      )}
+      ) : null}
 
-      {work.images.userJourney && (
+      {work.images.userJourney ? (
         <SubSection>
           <SubTitle primaryColor={work.primaryColor}>User Journey</SubTitle>
           <Image src={work.images.userJourney} alt="user flow" />
         </SubSection>
-      )}
+      ) : null}
 
-      <SubSection>
-        <SubTitle primaryColor={work.primaryColor}>
-          Low Fidelity Mock Ups
-        </SubTitle>
-        <ImageList>
-          {work.images.lowFidelity.map((img) => (
-            <ImageContainer>
-              <Image src={img} alt="low fidelity mock up" />
-            </ImageContainer>
-          ))}
-        </ImageList>
-      </SubSection>
+      {work.images.lowFidelity ? (
+        <SubSection>
+          <SubTitle primaryColor={work.primaryColor}>
+            Low Fidelity Mock Ups
+          </SubTitle>
+          <ImageList>
+            {work.images.lowFidelity.map((img) => (
+              <ImageContainer>
+                <Image src={img} alt="low fidelity mock up" />
+              </ImageContainer>
+            ))}
+          </ImageList>
+        </SubSection>
+      ) : null}
 
-      <SubSection>
-        <SubTitle primaryColor={work.primaryColor}>High Fidelity</SubTitle>
-        <ImageList>
-          {work.images.highFidelity.map((img) => (
-            <ImageContainer>
-              <Image src={img} alt="high fidelity designs" />
-            </ImageContainer>
-          ))}
-        </ImageList>
-      </SubSection>
+      {work.images.highFidelity ? (
+        <SubSection>
+          <SubTitle primaryColor={work.primaryColor}>High Fidelity</SubTitle>
+          <ImageList>
+            {work.images.highFidelity.map((img) => (
+              <ImageContainer>
+                <Image src={img} alt="high fidelity designs" />
+              </ImageContainer>
+            ))}
+          </ImageList>
+        </SubSection>
+      ) : null}
+
+      {work.images.highFidelity2 ? (
+        <SubSection>
+          <SubTitle primaryColor={work.primaryColor}>High Fidelity</SubTitle>
+          <ImageList column>
+            {work.images.highFidelity2.map((img) => (
+              <ImageContainer column>
+                <Image src={img} alt="low fidelity mock up" />
+              </ImageContainer>
+            ))}
+          </ImageList>
+        </SubSection>
+      ) : null}
     </Container>
   );
 }
@@ -97,17 +114,17 @@ const Title = styled.h1`
 const SubSection = styled.article`
   align-self: stretch;
   margin-bottom: 3em;
-  text-transform: capitalize;
 `;
 
 const ImageContainer = styled.div`
-  min-width: 200px;
-  max-width: 200px;
+  min-width: ${({ column }) => (column ? "100%" : "200px")};
+  max-width: ${({ column }) => (column ? "100%" : "200px")};
 `;
 
 const ImageList = styled.div`
   display: flex;
   gap: 1em;
+  flex-direction: ${({ column }) => (column ? "column" : "row")};
   align-items: center;
   justify-items: center;
   overflow: scroll;

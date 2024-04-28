@@ -27,7 +27,7 @@ function App() {
           >
             <Route index element={<HomePage />} />
             <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contacts />} />
+            {/* <Route path="contact" element={<Contacts />} /> */}
             <Route path="resume" element={<Resume />} />
             <Route path="works/:id" element={<Work />} />
             <Route path="*" element={<HomePage />} />

@@ -33,15 +33,12 @@ export default function ContactsContainer() {
 
 const Container = styled.div`
   padding-top: 150px;
-  background-image: url("../../images/polygons/light-pink.svg"),
-    url("../../images/polygons/light-purple.svg");
   background-position: 10% 100px, 95% 35%;
   background-repeat: no-repeat, no-repeat;
   background-size: 180px;
   width: 85%;
   max-width: ${(props) => props.theme.bp.xl};
   margin: 0 auto;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-size: ${(props) => props.theme.fontSize.xl};

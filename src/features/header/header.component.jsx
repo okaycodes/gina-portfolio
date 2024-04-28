@@ -76,7 +76,7 @@ const Container = styled.header`
   position: fixed;
   z-index: 2;
   width: 100%;
-  background-color: ${(props) => props.theme.colors.neutralBlackDarker};
+  background-color: ${(props) => props.theme.colors.bg};
   box-shadow: ${(props) =>
     props.scrollPastHeader
       ? "0px 3px 5px 0px rgba(0, 0, 0, 0.3)"
